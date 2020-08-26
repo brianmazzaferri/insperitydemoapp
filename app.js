@@ -77,7 +77,7 @@ app.action('run_analysis', async ({ ack, body, context }) => {
     const result = await app.client.views.open({
       token: context.botToken,
       // Pass a valid trigger_id within 3 seconds of receiving it
-      trigger_id: payload.trigger_id,
+      trigger_id: body.trigger_id,
       // View payload
       view: JSON.stringify(viewLoad)
     });
