@@ -33,6 +33,42 @@ const app = new App({
 
 //LISTENERS GO HERE
 
+app.command('prospect', async ({ ack, payload, context }) => {
+  // Acknowledge the command request
+  ack();
+
+  try {
+    const result = await app.client.chat.postMessage({
+      token: context.botToken,
+      // Channel to send message to
+      channel: payload.channel_id,
+      // Include a button in the message (or whatever blocks you want!)
+      blocks: [
+        {
+          type: 'section',
+          text: {
+            type: 'mrkdwn',
+            text: '*New Prospect Alert!* a prospect has submitted <www.oursite.com|documentation> on our portal'
+          },
+          accessory: {
+            type: 'button',
+            text: {
+              type: 'plain_text',
+              text: 'Run Analysis'
+            },
+            action_id: 'run_analysis'
+          }
+        }
+      ],
+      // Text in the notification
+      text: 'Message from Test App'
+    });
+    console.log(result);
+  }
+  catch (error) {
+    console.error(error);
+  }
+});
 
 
 //BOILERPLATE BELOW HERE
