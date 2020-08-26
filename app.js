@@ -98,7 +98,11 @@ app.view('main1', async ({ack, body, view, context})=> {
   } catch(error){
     console.error(error);
   }
-})
+});
+
+app.view('main2', async ({ack, body, view, context})=> {
+  ack();
+});
 
 //BOILERPLATE BELOW HERE
 
