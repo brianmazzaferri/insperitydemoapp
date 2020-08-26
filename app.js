@@ -43,7 +43,7 @@ app.command('/prospect', async ({ ack, payload, context }) => {
     const result = await app.client.chat.postMessage({
       token: context.botToken,
       // Channel to send message to
-      channel: payload.user.id,
+      channel: payload.channel_id,
       // Include a button in the message (or whatever blocks you want!)
       blocks: [
         {
