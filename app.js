@@ -102,6 +102,17 @@ app.view('main1', async ({ack, body, view, context})=> {
 
 app.view('main2', async ({ack, body, view, context})=> {
   ack();
+  try{
+    const msgLoad = require ("./JSON/successmessage.json");
+    const result = await app.client.chat.postMessage({
+      token:context.botToken,
+      channel:body.user_id,
+      text:"Calculation Saved!",
+      blocks: JSON.stringify(msgLoad)
+    });
+  }catch(error){
+    console.error(error);
+  }
 });
 
 //BOILERPLATE BELOW HERE
