@@ -104,6 +104,9 @@ app.view('main2', async ({ack, body, view, context})=> {
   ack();
   try{
     const msgLoad = require ("./JSON/successmessage.json");
+    console.log("BODYLOG");
+    console.log(body);
+    console.log("END BODYLOG");
     const result = await app.client.chat.postMessage({
       token:context.botToken,
       channel:body.user_id,
