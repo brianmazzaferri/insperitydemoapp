@@ -90,9 +90,9 @@ app.view('main1', async ({ack, body, view, context})=> {
   ack();
   try{
     const viewLoad = require ("./JSON/success.json");
-    const result = await app.client.views.update({
+    const result = await app.client.views.open({
       token:context.botToken,
-      view_id:body.view.id,
+      trigger_id: body.trigger_id,
       view: JSON.stringify(viewLoad)
     }); 
   } catch(error){
