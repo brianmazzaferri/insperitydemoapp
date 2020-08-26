@@ -49,7 +49,7 @@ app.command('/prospect', async ({ ack, payload, context }) => {
           type: 'section',
           text: {
             type: 'mrkdwn',
-            text: '*New Prospect Alert!* a prospect has submitted <www.oursite.com|documentation> on our portal\n'+context.
+            text: '*New Prospect Alert!* a prospect has submitted <www.oursite.com|documentation> on our portal'
           },
           accessory: {
             type: 'button',
