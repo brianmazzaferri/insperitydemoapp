@@ -38,6 +38,7 @@ app.command('/prospect', async ({ ack, payload, context }) => {
   ack();
 
   try {
+    console.log(context);
     const result = await app.client.chat.postMessage({
       token: context.botToken,
       // Channel to send message to
@@ -70,6 +71,21 @@ app.command('/prospect', async ({ ack, payload, context }) => {
   }
 });
 
+app.action('run_analysis', async ({ ack, body, context }) => {
+  ack();
+  try{
+    const viewLoad = require ("./JSON/profitmodal.json");
+    const result = await app.client.views.open({
+      token: context.botToken,
+      // Pass a valid trigger_id within 3 seconds of receiving it
+      trigger_id: payload.trigger_id,
+      // View payload
+      view: JSON.stringify(viewLoad)
+    });
+  } catch (error){
+      console.error(error);
+  }
+});
 
 //BOILERPLATE BELOW HERE
 

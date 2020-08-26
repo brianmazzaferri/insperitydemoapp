@@ -1,0 +1,158 @@
+{
+	"type": "modal",
+	"submit": {
+		"type": "plain_text",
+		"text": "Submit",
+		"emoji": true
+	},
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+	"title": {
+		"type": "plain_text",
+		"text": "Profitability Calculator",
+		"emoji": true
+	},
+	"blocks": [
+		{
+			"type": "header",
+			"text": {
+				"type": "plain_text",
+				"text": "Enter the fields below to determine margin",
+				"emoji": true
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "input",
+			"label": {
+				"type": "plain_text",
+				"text": "Industry",
+				"emoji": true
+			},
+			"element": {
+				"type": "radio_buttons",
+				"options": [
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Manufacturing",
+							"emoji": true
+						},
+						"value": "1"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Services",
+							"emoji": true
+						},
+						"value": "2"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Media",
+							"emoji": true
+						},
+						"value": "3"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Other",
+							"emoji": true
+						},
+						"value": "4"
+					}
+				]
+			}
+		},
+		{
+			"type": "input",
+			"element": {
+				"type": "checkboxes",
+				"options": [
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Full Time",
+							"emoji": true
+						},
+						"value": "value-0"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Part Time",
+							"emoji": true
+						},
+						"value": "value-1"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "1099",
+							"emoji": true
+						},
+						"value": "value-2"
+					}
+				]
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Types of Employees",
+				"emoji": true
+			}
+		},
+		{
+			"type": "input",
+			"element": {
+				"type": "plain_text_input"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Number of Employees",
+				"emoji": true
+			}
+		},
+		{
+			"type": "input",
+			"element": {
+				"type": "plain_text_input"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Average Salary",
+				"emoji": true
+			}
+		},
+		{
+			"type": "actions",
+			"elements": [
+				{
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"text": ":calculator: calculate average",
+						"emoji": true
+					},
+					"value": "click_me_123"
+				},
+				{
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"text": ":arrow_up_small: import values from .csv",
+						"emoji": true
+					},
+					"value": "click_me_123"
+				}
+			]
+		}
+	]
+}
