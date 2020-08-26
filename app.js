@@ -38,9 +38,6 @@ app.command('/prospect', async ({ ack, payload, context }) => {
   ack();
 
   try {
-    console.log("payload here");
-    console.log(payload);
-    console.log("END PAYLOAD");
     const result = await app.client.chat.postMessage({
       token: context.botToken,
       // Channel to send message to
@@ -64,7 +61,7 @@ app.command('/prospect', async ({ ack, payload, context }) => {
         }
       ],
       // Text in the notification
-      text: 'Message from Test App'
+      text: 'New Prospect Alert!'
     });
     console.log(result);
   }
