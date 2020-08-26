@@ -86,6 +86,20 @@ app.action('run_analysis', async ({ ack, body, context }) => {
   }
 });
 
+app.view('main1', async ({ack, body, view, context})=> {
+  ack();
+  try{
+    const viewLoad = require ("./JSON/success.json");
+    const result = await app.client.views.update({
+      token:context.botToken,
+      view_id:body.view.id,
+      view: JSON.stringify(viewLoad)
+    }); 
+  } catch(error){
+    console.error(error);
+  }
+})
+
 //BOILERPLATE BELOW HERE
 
 //look up any one document from a query string

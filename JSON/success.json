@@ -1,0 +1,33 @@
+{
+	"type": "modal",
+	"callback_id": "main2",
+	"submit": {
+		"type": "plain_text",
+		"text": "Save",
+		"emoji": true
+	},
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+	"title": {
+		"type": "plain_text",
+		"text": "Profitability Calculator",
+		"emoji": true
+	},
+	"blocks": [
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*Margin: * 22%\n*Certainty:* 67%\n*Output:* Very Profitable\n*Conclusion:* Proceed"
+			},
+			"accessory": {
+				"type": "image",
+				"image_url": "https://i.imgur.com/a7MqEoE.png",
+				"alt_text": "cute cat"
+			}
+		}
+	]
+}
