@@ -33,7 +33,7 @@ const app = new App({
 
 //LISTENERS GO HERE
 
-app.command('prospect', async ({ ack, payload, context }) => {
+app.command('/prospect', async ({ ack, payload, context }) => {
   // Acknowledge the command request
   ack();
 
