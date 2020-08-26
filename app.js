@@ -38,6 +38,7 @@ app.command('/prospect', async ({ ack, payload, context }) => {
   ack();
 
   try {
+    console.log("CONTEXT HERE");
     console.log(context);
     const result = await app.client.chat.postMessage({
       token: context.botToken,
