@@ -109,7 +109,7 @@ app.view('main2', async ({ack, body, view, context})=> {
     console.log("END BODYLOG");
     const result = await app.client.chat.postMessage({
       token:context.botToken,
-      channel:body.user_id,
+      channel:body.user.id,
       text:"Calculation Saved!",
       blocks: JSON.stringify(msgLoad)
     });
